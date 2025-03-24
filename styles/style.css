@@ -90,7 +90,7 @@
   border-bottom: 1px solid var(--accent-color);
 }
 
-.page__title {
+.main__title {
   font-size: var(--title-size);
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -106,7 +106,7 @@
 }
 
 .content {
-  padding: 40px 10px 0 10px;
+  padding: 40px 10px 40px 10px;
 }
 
 .content__section {
@@ -150,7 +150,10 @@
   outline: 1px solid var(--advice-text-color)
 }
 
-
-.gallery .section__title {
-  color: var(--bg-color);
+.footer {
+  min-block-size: 668px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 10px;
 }
