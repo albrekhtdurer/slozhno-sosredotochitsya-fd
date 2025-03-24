@@ -5,6 +5,11 @@
 :root {
   --bg-color: rgba(0, 0, 40, 1);
   --accent-color: rgba(255, 0, 112, 1);
-  --title-size: 116px;
+  --page-font: 'IBM Plex Mono';
+  --page-font-weight-regular: 400;
+  --page-font-weight-bold: 700;
+  --title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --title-color: rgba(219, 0, 255, 1);
+  --advice-text-color: rgba(241, 178, 206, 1);
+
 }
