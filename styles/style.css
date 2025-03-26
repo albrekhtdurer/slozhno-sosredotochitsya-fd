@@ -3,7 +3,6 @@
 .page {
   padding-inline-start: var(--page-main-gap);
   padding-inline-end: var(--page-main-gap);
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: var(--page-font), sans-serif;
   font-weight: var(--page-font-weight-bold);
   font-size: 18px;
