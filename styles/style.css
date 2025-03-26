@@ -10,6 +10,10 @@
   background-color: var(--bg-color);
   font-size: 18px;
   inline-size: 100%;
+  background-image: var(--header-image-url);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .header {
@@ -23,8 +27,6 @@
   padding-inline-end: var(--page-main-gap);
   align-items: start;
   position: relative;
-  background-image: url('../images/cover-image-dark.png');
-  background-position: center center;
 }
 
 .decorated-zone::before {
@@ -37,7 +39,7 @@
   display: block;
   border-width: 1px 1px 0px 0px;
   border-style: solid;
-  border-color: var(--accent-color);
+  border-color: var(--decorated-corner-color);
 }
 
 .decorated-zone::after {
@@ -50,7 +52,7 @@
   display: block;
   border-width: 0px 0px 1px 1px;
   border-style: solid;
-  border-color: var(--accent-color);
+  border-color: var(--decorated-corner-color);
 }
 
 
@@ -127,7 +129,7 @@
 
 .title-decor {
   background-color: var(--accent-color);
-  color: var(--bg-color);
+  color: var(--decorated-title-color);
 }
 
 .content {
@@ -165,11 +167,10 @@
 }
 
 .section__title {
-  color: var(--accent-color);
+  color: var(--section-title-color);
   font-weight: var(--page-font-weight-bold);
   line-height: 1.3em;
   font-size: 18px;
-
 }
 
 .section__text {
@@ -198,7 +199,7 @@
 }
 
 .advice__text {
-  color: var(--advice-text-color);
+  color: var(--main-text-color);
   font-weight: var(--page-font-weight-regular);
   line-height: 1.3em;
 }
@@ -209,11 +210,11 @@
 }
 
 .advice__link:hover {
-  border-bottom: 1px solid var(--advice-text-color);
+  border-bottom: 1px solid var(--main-text-color);
 }
 
 .advice__link:focus-visible {
-  outline: 1px solid var(--advice-text-color)
+  outline: 1px solid var(--main-text-color)
 }
 
 .footer {
@@ -296,5 +297,43 @@
   }
   .footer {
     justify-content: center;
+  }
+}
+
+@media (width >= 1024px) {
+  :root {
+    --header-padding-block-start: 20px;
+    --header-padding-block-end: 134px;
+  }
+
+  .header {
+    grid-template-rows: 1fr 2fr min-content;
+  }
+
+  .header__title {
+    align-self: center;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .content__section {
+    gap: 10px;
+  }
+
+  .content__section + .reasons {
+    gap: 20px;
+  }
+
+  .reasons .section__text {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
