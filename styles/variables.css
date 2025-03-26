@@ -2,23 +2,24 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
 :root {
-  --bg-color: rgba(0, 0, 40, 1);
-  --accent-color: rgba(255, 0, 112, 1);
+  --bg-color: rgb(0 0 40 / 1);
+  --accent-color: rgb(255 0 112 / 1);
   --page-font: 'IBM Plex Mono';
   --page-font-weight-regular: 400;
   --page-font-weight-bold: 700;
   --title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --title-color: rgba(219, 0, 255, 1);
-  --main-text-color: rgba(241, 178, 206, 1);
+  --title-color: rgb(219 0 255 / 1);
+  --button-hover-outline-color: rgb(255 0 112 / 0.4);
+  --main-text-color: rgb(241 178 206 / 1);
   --page-main-gap: 10px;
-  --header-padding-block-start: 75px;
-  --header-padding-block-end: 66px;
   --content-padding-block-start: 40px;
   --content-padding-block-end: 40px;
   --sections-gap: 50px;
-  --header-image-url: url('../images/cover-image-dark.png');
+  --header-image-url: url(../images/cover-image-dark.png);
   --decorated-corner-color: var(--accent-color);
+  --decorated-corner-size: 25px;
   --decorated-title-color: var(--bg-color);
   --section-title-color: var(--accent-color);
 }

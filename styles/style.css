@@ -1,89 +1,86 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-/* TODO: пройтись и вынести паддинги и марджины в переменные */
-/* TODO: поправить паддинги и марджины на лог свойства */
-/* TODO: повесить свойства текста на content */
 
 .page {
+  padding-inline-start: var(--page-main-gap);
+  padding-inline-end: var(--page-main-gap);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: var(--page-font), sans-serif;
   font-weight: var(--page-font-weight-bold);
-  background-color: var(--bg-color);
   font-size: 18px;
-  inline-size: 100%;
+  background-color: var(--bg-color);
   background-image: var(--header-image-url);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  inline-size: 100%;
 }
 
 .header {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
+  align-items: start;
+  padding-block-start: var(--page-main-gap);
+  padding-block-end: var(--page-main-gap);
   min-block-size: 668px;
   block-size: 100vh;
-  padding-block-start: var(--header-padding-block-start);
-  padding-block-end: var(--header-padding-block-end);
-  padding-inline-start: var(--page-main-gap);
-  padding-inline-end: var(--page-main-gap);
-  align-items: start;
-  position: relative;
 }
 
 .decorated-zone::before {
   content: '';
   position: absolute;
-  inset-block-start: var(--page-main-gap);
-  inset-inline-end: var(--page-main-gap);
-  inline-size: 25px;
-  block-size: 25px;
   display: block;
-  border-width: 1px 1px 0px 0px;
+  border-width: 1px 1px 0 0;
   border-style: solid;
   border-color: var(--decorated-corner-color);
+  inset-block-start: var(--page-main-gap);
+  inset-inline-end: 0;
+  inline-size: var(--decorated-corner-size);
+  block-size: var(--decorated-corner-size);
 }
 
 .decorated-zone::after {
   content: '';
   position: absolute;
-  inset-block-end: var(--page-main-gap);
-  inset-inline-start: var(--page-main-gap);
-  inline-size: 25px;
-  block-size: 25px;
   display: block;
-  border-width: 0px 0px 1px 1px;
+  border-width: 0 0 1px 1px;
   border-style: solid;
   border-color: var(--decorated-corner-color);
+  inset-block-end: var(--page-main-gap);
+  inset-inline-start: 0;
+  inline-size: var(--decorated-corner-size);
+  block-size: var(--decorated-corner-size);
 }
 
-
-.header__rec-button {
+.header__rec {
   position: absolute;
-  inset-block-start: calc(var(--page-main-gap) + 2px);
-  inset-inline-end: calc(var(--page-main-gap) + 10px);
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
+  inset-block-start: calc(var(--page-main-gap) + 2px);
+  inset-inline-end: calc(var(--page-main-gap) - 2px);
 }
 
-.header__rec-button::before {
+.header__rec::before {
   content: 'Rec';
-  text-transform: uppercase;
-  font-weight: var(--page-font-weight-regular);
   color: var(--accent-color);
+  font-weight: var(--page-font-weight-regular);
+  text-transform: uppercase;
 }
 
-.header__rec-button::after {
+.header__rec::after {
   content: '';
   display: block;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
   block-size: 9px;
   inline-size: 9px;
-  border-radius: 50%;
-  box-shadow: 0px 0px 4px 2px var(--accent-color);
-  background-color: var(--accent-color);
 }
 
 .header__theme-menu {
   justify-self: end;
+  align-self: center;
   color: var(--accent-color);
   font-weight: var(--page-font-weight-regular);
 }
@@ -96,24 +93,27 @@
 }
 
 .header__theme-menu-button {
+  border: none;
+  color: var(--accent-color);
+  line-height: 1;
   text-transform: lowercase;
   background-color: transparent;
-  border: none;
-  line-height: 1;
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--accent-color);
+  border: none;
+  outline: 1px solid var(--button-hover-outline-color);
+  outline-offset: 4px;
 }
 
 .header__theme-menu-button:not(:active):focus-visible {
-  outline: none;
   border-bottom: 1px solid var(--accent-color);
+  outline: none;
 }
 
 .main__title {
-  font-size: var(--title-size);
   color: var(--title-color);
+  font-size: var(--title-size);
   line-height: 0.83em;
 }
 
@@ -122,24 +122,22 @@
 }
 
 .header__subtitle {
-  font-size: 18px;
   display: block;
-  align-self: end;
+  align-self: center;
+  font-size: inherit;
 }
 
 .title-decor {
-  background-color: var(--accent-color);
   color: var(--decorated-title-color);
+  background-color: var(--accent-color);
 }
 
 .content {
-  padding-block-start: var(--content-padding-block-start);
-  padding-block-end: var(--content-padding-block-end);
-  padding-inline-start: var(--page-main-gap);
-  padding-inline-end: var(--page-main-gap);
   display: flex;
   flex-direction: column;
   gap: var(--sections-gap);
+  padding-block-start: var(--content-padding-block-start);
+  padding-block-end: var(--content-padding-block-end);
 }
 
 .content__section {
@@ -161,32 +159,31 @@
 }
 
 .gallery img {
+  object-fit: cover;
   inline-size: 100%;
   block-size: 100%;
-  object-fit: cover;
 }
 
 .section__title {
   color: var(--section-title-color);
   font-weight: var(--page-font-weight-bold);
+  font-size: inherit;
   line-height: 1.3em;
-  font-size: 18px;
 }
 
 .section__text {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
 }
 
-.section__subtitle {
+.article__title {
   font-weight: var(--page-font-weight-bold);
+  font-size: inherit;
   line-height: 1.3em;
-  font-size: 18px;
 }
 
-.content__advice {
+.article {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -194,19 +191,19 @@
 
 .advice__title {
   font-weight: var(--page-font-weight-regular);
-  font-size: 18px;
+  font-size: inherit;
   line-height: 1.3em;
 }
 
-.advice__text {
+.article__text {
   color: var(--main-text-color);
   font-weight: var(--page-font-weight-regular);
   line-height: 1.3em;
 }
 
 .advice__link {
-  text-shadow: 2px 2px var(--accent-color);
   text-decoration: none;
+  text-shadow: 2px 2px var(--accent-color);
 }
 
 .advice__link:hover {
@@ -214,15 +211,13 @@
 }
 
 .advice__link:focus-visible {
-  outline: 1px solid var(--main-text-color)
+  outline: 1px solid var(--main-text-color);
 }
 
 .footer {
-  min-block-size: 668px;
   position: relative;
-  display: flex;
+  display: grid;
   align-items: center;
-  padding: 0 10px 0 15px;
   min-block-size: 668px;
   block-size: 100vh;
 }
@@ -232,29 +227,41 @@
 }
 
 @media (width >= 768px) {
+
   :root {
     --page-main-gap: 20px;
-    --header-padding-block-start: 192px;
-    --header-padding-block-end: 183px;
     --content-padding-block-start: 60px;
     --content-padding-block-end: 60px;
     --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     --sections-gap: 80px;
   }
+
   .page {
     max-inline-size: 1023px;
   }
+
   .header {
     min-block-size: 668px;
   }
-  .header__title {
-    margin-inline-start: calc(var(--page-main-gap) * -1)
+
+  .header__theme-menu {
+    align-self: center;
   }
+
+  .header__title {
+    margin-inline-start: calc(var(--page-main-gap) * -1);
+  }
+
+  .header__rec {
+    inset-inline-end: calc(var(--page-main-gap) - 10px);
+  }
+
   .header__subtitle {
-    align-self: end;
     justify-self: end;
+    align-self: center;
     inline-size: 50%;
   }
+
   .content__section {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -274,41 +281,38 @@
     grid-template-rows: repeat(auto-fill, 1fr);
     gap: 20px;
   }
-  
+
   .sunset {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
   }
+
   .ice-cream {
     grid-column: 3 / 4;
     grid-row: 1 / 3;
   }
+
   .tape {
     grid-column: 1 / 2;
     grid-row: 2 / 4;
   }
+
   .books {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
   }
+
   .street {
     grid-column: 2 / 4;
     grid-row: 3 / 4;
   }
+
   .footer {
     justify-content: center;
   }
 }
 
 @media (width >= 1024px) {
-  :root {
-    --header-padding-block-start: 20px;
-    --header-padding-block-end: 134px;
-  }
-
-  .header {
-    grid-template-rows: 1fr 2fr min-content;
-  }
 
   .header__title {
     align-self: center;
@@ -316,11 +320,13 @@
 
   .header__theme-menu {
     justify-self: center;
+    align-self: start;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
     gap: 25px;
+    padding-inline-end: 0;
   }
 
   .content__section {
@@ -333,7 +339,7 @@
 
   .reasons .section__text {
     display: grid;
-    gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
   }
 }
