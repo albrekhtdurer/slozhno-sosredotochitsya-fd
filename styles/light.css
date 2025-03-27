@@ -38,7 +38,7 @@
     --theme-menu-button-color: var(--main-text-color);
     --theme-menu-button-hover-color: rgb(50 49 45 / 0.4);
     --section-title-color: var(--main-text-color);
-      }
+  }
 
   .header__rec {
     display: none;
