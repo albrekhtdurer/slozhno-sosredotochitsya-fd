@@ -16,21 +16,11 @@
   --header-image-url: url(../images/cover-image-dark.png);
   --decorated-corner-color: var(--accent-color);
   --decorated-title-color: var(--bg-color);
+  --theme-menu-button-color: var(--accent-color);
+  --theme-menu-button-hover-color: rgb(255 0 112 / 0.4);
   --section-title-color: var(--accent-color);
-}
-
-.theme-dark .section__title {
-  color: var(--section-title-color);
-}
-
-.theme-dark .title-decor {
-  color: var(--decorated-title-color);
 }
 
 .theme-dark .header__rec {
   display: flex;
-}
-
-.theme-dark .header__theme-menu-button {
-  color: var(--accent-color);
 }

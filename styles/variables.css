@@ -11,7 +11,6 @@
   --page-font-weight-bold: 700;
   --title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --title-color: rgb(219 0 255 / 1);
-  --button-hover-outline-color: rgb(255 0 112 / 0.4);
   --main-text-color: rgb(241 178 206 / 1);
   --page-main-gap: 10px;
   --content-padding-block-start: 40px;
@@ -21,5 +20,18 @@
   --decorated-corner-color: var(--accent-color);
   --decorated-corner-size: 25px;
   --decorated-title-color: var(--bg-color);
+  --theme-menu-button-color: var(--accent-color);
+  --theme-menu-button-hover-color: rgb(255 0 112 / 0.4);
   --section-title-color: var(--accent-color);
+}
+
+@media (width >= 768px) {
+
+  :root {
+    --page-main-gap: 20px;
+    --content-padding-block-start: 60px;
+    --content-padding-block-end: 60px;
+    --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --sections-gap: 80px;
+  }
 }

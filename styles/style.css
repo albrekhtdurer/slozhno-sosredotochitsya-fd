@@ -3,7 +3,7 @@
 .page {
   padding-inline-start: var(--page-main-gap);
   padding-inline-end: var(--page-main-gap);
-  font-family: var(--page-font), sans-serif;
+  font-family: var(--page-font), monospace;
   font-weight: var(--page-font-weight-bold);
   font-size: 18px;
   background-color: var(--bg-color);
@@ -80,7 +80,7 @@
 .header__theme-menu {
   justify-self: end;
   align-self: center;
-  color: var(--accent-color);
+  color: var(--theme-menu-button-color);
   font-weight: var(--page-font-weight-regular);
 }
 
@@ -93,7 +93,7 @@
 
 .header__theme-menu-button {
   border: none;
-  color: var(--accent-color);
+  color: var(--theme-menu-button-color);
   line-height: 1;
   text-transform: lowercase;
   background-color: transparent;
@@ -101,13 +101,19 @@
 
 .header__theme-menu-button:hover {
   border: none;
-  outline: 1px solid var(--button-hover-outline-color);
+  outline: 1px solid var(--theme-menu-button-hover-color);
   outline-offset: 4px;
 }
 
 .header__theme-menu-button:not(:active):focus-visible {
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid currentColor;
   outline: none;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--theme-menu-button-hover-color);
+  outline-offset: 4px;
+  pointer-events: none;
 }
 
 .main__title {
@@ -206,7 +212,7 @@
 }
 
 .advice__link:hover {
-  border-bottom: 1px solid var(--main-text-color);
+  border-bottom: 1px solid currentColor;
 }
 
 .advice__link:focus-visible {
@@ -226,14 +232,6 @@
 }
 
 @media (width >= 768px) {
-
-  :root {
-    --page-main-gap: 20px;
-    --content-padding-block-start: 60px;
-    --content-padding-block-end: 60px;
-    --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    --sections-gap: 80px;
-  }
 
   .page {
     max-inline-size: 1023px;
