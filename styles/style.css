@@ -111,7 +111,7 @@
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--theme-menu-button-hover-color);
+  outline: 1px solid currentColor;
   outline-offset: 4px;
   pointer-events: none;
 }
